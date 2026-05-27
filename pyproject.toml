@@ -3,3 +3,10 @@ name = "flow-gatekeeper-v2"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = ["temporalio", "openai"]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-asyncio"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"          # every async test function runs automatically
+testpaths = ["tests"]
